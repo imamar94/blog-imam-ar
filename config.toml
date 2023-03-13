@@ -1,0 +1,110 @@
+baseURL = "https://blog.imam-ar.com"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "LoveIt"
+
+# website title
+title = "Imam AR"
+
+# language code ["id"]
+languageCode = "id"
+# language name ["Indonesian"]
+languageName = "Indonesian"
+
+# emoji
+enableEmoji = true
+
+# description and subtitle
+description = "Imam AR's personal site"
+subtitle = "Imam AR's personal site"
+
+# Author config
+[author]
+  name = "Imam AR"
+  email = "me@imam-ar.com"
+  link = "https://blog.imam-ar.com"
+
+# params customization
+[params]
+  [params.header]
+    [params.header.title]
+      name = "Imam AR"
+  [params.home]
+    [params.home.profile]
+      enable = true
+      avatarURL = "images/PP.jpeg"
+      title = "Hello! I am Imam!"
+      subtitle = "This place contain my random thought, writing, and sometimes rant!"
+      typeit = false
+  [params.footer]
+    hugo = false
+    since = 2022
+
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+# Social
+[params.social]
+  [params.social.facebook]
+    weight = 0
+    prefix = "https://www.facebook.com/"
+    id = "imam.arrr"
+    title = "Facebook"
+  [params.social.linkedin]
+    weight = 0
+    prefix = "https://www.linkedin.com/in/"
+    id = "imamar"
+    title = "LinkedIn"
+  [params.social.instagram]
+    weight = 0
+    title = "Instagram"
+    prefix = "https://www.instagram.com/"
+    id = "imam.ar_"
+  [params.social.email]
+    weight = 0
+    id = "me@imam-ar.com"
+  [params.social.github]
+    weight = 0
+    id = "imamar94"
+
+[deployment]
+order = [".jpg$", ".jpeg$", ".gif$"]
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "deploygcs"
+URL = "gs://blog.imam-ar.com/"
